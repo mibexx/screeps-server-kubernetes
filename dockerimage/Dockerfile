@@ -31,12 +31,9 @@ ENV STEAM_API_KEY ""
 ENV SCREEPS_DATABASE "/data/screeps-db"
 ENV SCREEPS_LOGS "/data/screeps-logs"
 
-RUN mkdir -p $SCREEPS_DATABASE \
- && mkdir -p $SCREEPS_LOGS
+RUN mkdir -p $SCREEPS_LOGS
 
 COPY ./entrypoint /entrypoint
 RUN chmod +x /entrypoint
-
-VOLUME $SCREEPS_DATABASE
 
 ENTRYPOINT ["/entrypoint"]
