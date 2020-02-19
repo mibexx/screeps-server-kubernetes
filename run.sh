@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ $1 == "" ]; then
+if [ "$1" == "" ]; then
   echo "First param must be your steam api key"
   exit
 fi
 
-if [ $2 == "" ]; then
+if [ "$2" == "" ]; then
   echo "Second param must be your server passord"
   exit
 fi
