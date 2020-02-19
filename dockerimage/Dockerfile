@@ -34,4 +34,4 @@ RUN chmod +x $SCREEPS_DIR/entrypoint
 
 VOLUME $SCREEPS_DIR
 
-ENTRYPOINT ["./entrypoint"]
+ENTRYPOINT ["$SCREEPS_DIR/entrypoint"]
