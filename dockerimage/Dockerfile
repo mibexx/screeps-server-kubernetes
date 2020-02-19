@@ -29,9 +29,9 @@ ENV SCREEPS_CLI_PORT "21026"
 ENV SCREEPS_PASSWORD ""
 ENV STEAM_API_KEY ""
 
-COPY ./entrypoint $SCREEPS_DIR/entrypoint
-RUN chmod +x $SCREEPS_DIR/entrypoint
+COPY ./entrypoint /entrypoint
+RUN chmod +x /entrypoint
 
 VOLUME $SCREEPS_DIR
 
-ENTRYPOINT ["$SCREEPS_DIR/entrypoint"]
+ENTRYPOINT ["/entrypoint"]
