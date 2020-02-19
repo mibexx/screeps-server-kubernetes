@@ -29,6 +29,10 @@ ENV SCREEPS_CLI_PORT "21026"
 ENV SCREEPS_PASSWORD ""
 ENV STEAM_API_KEY ""
 ENV SCREEPS_DATABASE "/data/screeps-db"
+ENV SCREEPS_LOGS "/data/screeps-logs"
+
+RUN mkdir -p $SCREEPS_DATABASE \
+ && mkdir -p $SCREEPS_LOGS
 
 COPY ./entrypoint /entrypoint
 RUN chmod +x /entrypoint
