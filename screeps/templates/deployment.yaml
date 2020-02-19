@@ -24,13 +24,13 @@ spec:
               protocol: TCP
           env:
             - name: SCREEPS_HOST
-              value: {{ .Values.screeps.server_host }}
+              value: {{ .Values.screeps.server_host | quote }}
             - name: SCREEPS_PORT
-              value: {{ .Values.screeps.server_port }}
+              value: {{ .Values.screeps.server_port | quote }}
             - name: SCREEPS_PASSWORD
-              value: {{ .Values.screeps.server_password }}
+              value: {{ .Values.screeps.server_password | quote }}
             - name: STEAM_API_KEY
-              value: {{ .Values.screeps.steam_api_key }}
+              value: {{ .Values.screeps.steam_api_key | quote }}
           volumeMounts:
             - mountPath: {{ .Values.volume.mountPath }}
               name: screeps-data
