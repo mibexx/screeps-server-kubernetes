@@ -7,5 +7,5 @@ mkdir -p /data/screeps
 kubectl apply -f kubernetes/pv-volume.yaml
 kubectl apply -f kubernetes/pv-claim-data.yaml
 
-helm install screeps screeps --set screeps.steam_api_key=<your-steam-api-key> --set screeps.server_password=<your-server-password>
+helm install screeps screeps --set screeps.steam_api_key=<your-steam-api-key> --set screeps.server_password=<your-server-password>  --set ingress.host=<your-server-host>
 ```

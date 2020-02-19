@@ -13,12 +13,7 @@ service:
   port: 21025
 
 ingress:
-  enabled: true
-  annotations: {}
-  hosts:
-    - host: localhost
-      paths: []
-  tls: []
+  host: localhost
 
 screeps:
   steam_api_key: 123
