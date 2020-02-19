@@ -1,0 +1,27 @@
+# Default values for screeps.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: mibexx/screeps-server:k8s
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 21025
+
+ingress:
+  enabled: true
+  annotations: {}
+  hosts:
+    - host: localhost
+      paths: []
+  tls: []
+
+screeps:
+  steam_api_key: 123
+  server_password: screeps
+  server_host: 0.0.0.0
+  server_port: 21025

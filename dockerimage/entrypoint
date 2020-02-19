@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Server launching... have fun ..."
+
+echo $STEAM_API_KEY | npx screeps init
+
+npx screeps start --port $SCREEPS_PORT --host $SCREEPS_HOST --password $SCREEPS_PASSWORD --cli_host $SCREEPS_CLI_HOST --cli_port $SCREEPS_CLI_PORT --steam_api_key $STEAM_API_KEY
