@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: mibexx/screeps-server:k8s
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
