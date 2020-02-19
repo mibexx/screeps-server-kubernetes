@@ -32,6 +32,4 @@ ENV STEAM_API_KEY ""
 COPY ./entrypoint /entrypoint
 RUN chmod +x /entrypoint
 
-VOLUME $SCREEPS_DIR
-
 ENTRYPOINT ["/entrypoint"]
