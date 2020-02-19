@@ -22,5 +22,5 @@ screeps:
   server_port: "21025"
 
 volume:
-  mountPath: /root/screeps
+  mountPath: /data/screeps-db
   claimName: screeps-data-pv-claim
