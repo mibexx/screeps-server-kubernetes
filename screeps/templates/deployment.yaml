@@ -33,3 +33,10 @@ spec:
               value: {{ .Values.screeps.server_password }}
             - name: STEAM_API_KEY
               value: {{ .Values.screeps.steam_api_key }}
+          volumeMounts:
+            - mountPath: {{ .Values.volume.mountPath }}
+              name: screeps-data
+      volumes:
+        - name: screeps-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.volume.claimName }}
