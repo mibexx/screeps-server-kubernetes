@@ -16,10 +16,10 @@ ingress:
   host: localhost
 
 screeps:
-  steam_api_key: 123
-  server_password: screeps
-  server_host: 0.0.0.0
-  server_port: 21025
+  steam_api_key: "123"
+  server_password: "screeps"
+  server_host: "0.0.0.0"
+  server_port: "21025"
 
 volume:
   mountPath: /root/screeps
