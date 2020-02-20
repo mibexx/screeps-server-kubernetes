@@ -22,6 +22,8 @@ SERVER_HOST=$3
 mkdir -p /data/screeps
 
 kubectl apply -f kubernetes/pv-volume.yaml
+kubectl apply -f kubernetes/pv-volume-config.yaml
 kubectl apply -f kubernetes/pv-claim-data.yaml
+kubectl apply -f kubernetes/pv-claim-data-config.yaml
 
 helm install screeps screeps --set screeps.steam_api_key=$STEAM_API --set screeps.server_password=$SERVER_PASSWORD --set ingress.host=$SERVER_HOST
