@@ -30,6 +30,7 @@ ENV SCREEPS_PASSWORD ""
 ENV STEAM_API_KEY ""
 ENV SCREEPS_DATABASE "/data/screeps-db"
 ENV SCREEPS_LOGS "/data/screeps-logs"
+ENV SCREEPS_CONFIG "/data/screeps-config"
 
 RUN mkdir -p $SCREEPS_LOGS
 

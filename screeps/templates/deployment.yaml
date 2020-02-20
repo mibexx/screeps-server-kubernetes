@@ -34,7 +34,12 @@ spec:
           volumeMounts:
             - mountPath: {{ .Values.volume.mountPath }}
               name: screeps-data
+            - mountPath: {{ .Values.volume.configMountPath }}
+              name: screeps-config
       volumes:
         - name: screeps-data
           persistentVolumeClaim:
             claimName: {{ .Values.volume.claimName }}
+        - name: screeps-config
+          persistentVolumeClaim:
+            claimName: {{ .Values.volume.configClaimName }}

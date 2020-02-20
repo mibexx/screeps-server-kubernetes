@@ -24,3 +24,5 @@ screeps:
 volume:
   mountPath: /data/screeps-db
   claimName: screeps-data-pv-claim
+  configMountPath: /data/screeps-config
+  configClaimName: screeps-config-data-pv-claim

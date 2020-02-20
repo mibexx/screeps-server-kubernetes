@@ -5,10 +5,19 @@ cd $SCREEPS_DIR
 echo "Server launching... have fun ..."
 
 mkdir -p $SCREEPS_DATABASE
+mkdir -p $SCREEPS_CONFIG
 
 echo $STEAM_API_KEY | npx screeps init
+
+
 if [ ! -f $SCREEPS_DATABASE/db.json ]; then
  echo "Create empty database"
  cp -rfp $SCREEPS_DIR/db.json $SCREEPS_DATABASE/db.json
 fi
-npx screeps start --db $SCREEPS_DATABASE/db.json --logdir $SCREEPS_LOGS --port $SCREEPS_PORT --host $SCREEPS_HOST --password $SCREEPS_PASSWORD --cli_host $SCREEPS_CLI_HOST --cli_port $SCREEPS_CLI_PORT --steam_api_key $STEAM_API_KEY
+
+if [ ! -f $SCREEPS_CONFIG/mods.json ]; then
+ echo "Create vanilla config"
+ cp -rfp $SCREEPS_DIR/mods.json $SCREEPS_CONFIG/mods.json
+fi
+
+npx screeps start --db $SCREEPS_DATABASE/db.json --modfile $SCREEPS_CONFIG/mods.json --logdir $SCREEPS_LOGS --port $SCREEPS_PORT --host $SCREEPS_HOST --password $SCREEPS_PASSWORD --cli_host $SCREEPS_CLI_HOST --cli_port $SCREEPS_CLI_PORT --steam_api_key $STEAM_API_KEY
